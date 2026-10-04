@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  id-token: write # npm trusted publishing (OIDC), no long-lived token
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: "https://registry.npmjs.org"
+
+      - run: npm ci
+
+      - name: Smoke test (live API)
+        run: npm test
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+
+      - name: Tag matches package.json version
+        run: |
+          tag="${GITHUB_REF#refs/tags/v}"
+          ver="$(node -p "require('./package.json').version")"
+          if [ "$tag" != "$ver" ]; then
+            echo "tag v$tag != package.json $ver; refusing to publish"
+            exit 1
+          fi
+
+      - run: npm publish --provenance --access public
