@@ -33,6 +33,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/IIXINGCHEN/jev-mcp.git"
+    "url": "git+https://github.com/IIXINGCHEN/jev-mcp.git"
   }
 }
