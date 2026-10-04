@@ -1,5 +1,5 @@
 {
-  "name": "jev-mcp",
+  "name": "@iixingchen/jev-mcp",
   "version": "0.1.0",
   "description": "MCP server + CLI exposing TypeSafe Jev (System One) typed judgments to AI agents",
   "scripts": {

@@ -59,7 +59,7 @@ MCP server + CLI，把 [TypeSafe](https://typesafe.ai) 的 **Jev**（System One
 ### 安装
 
 ```bash
-npm install -g jev-mcp
+npm install -g @iixingchen/jev-mcp
 # 或从源码运行：node src/server.js
 ```
 
@@ -189,7 +189,7 @@ field. No parameters.
 ### Install
 
 ```bash
-npm install -g jev-mcp
+npm install -g @iixingchen/jev-mcp
 # or run from source: node src/server.js
 ```
 
