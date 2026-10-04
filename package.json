@@ -1,0 +1,42 @@
+{
+  "name": "jev-mcp",
+  "version": "0.1.0",
+  "description": "MCP server + CLI exposing TypeSafe Jev (System One) typed judgments to AI agents",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "typesafe",
+    "jev",
+    "system-one",
+    "ai-agents"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.0",
+    "@typesafe-ai/sdk": "^0.6.0"
+  },
+  "type": "module",
+  "bin": {
+    "jev-mcp": "src/server.js",
+    "jev-ask": "src/cli.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IIXINGCHEN/jev-mcp.git"
+  }
+}
